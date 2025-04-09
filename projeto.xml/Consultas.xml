@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="96b550fc-2679-46dc-b3e4-c7d2feaadec8" activeEnvironment="Default" name="CRMService-Consultas" soapui-version="5.8.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b673f1ba-bb0e-4517-86e2-46a86425d877" wsaVersion="NONE" name="ConsultaWSImplServiceSoapBinding" type="wsdl" bindingName="{http://clinica.com.br/}ConsultaWSImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/CRMService-1.0-SNAPSHOT/ConsultaWSImpl?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/CRMService-1.0-SNAPSHOT/ConsultaWSImpl?wsdl"><con:part><con:url>http://localhost:8080/CRMService-1.0-SNAPSHOT/ConsultaWSImpl?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ConsultaWSImplService" targetNamespace="http://clinica.com.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://clinica.com.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://interfaces.clinica.com.br/">
+  <wsdl:import location="http://localhost:8080/CRMService-1.0-SNAPSHOT/ConsultaWSImpl?wsdl=ConsultaWS.wsdl" namespace="http://interfaces.clinica.com.br/"></wsdl:import>
+  <wsdl:binding name="ConsultaWSImplServiceSoapBinding" type="ns1:ConsultaWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="cancelarConsulta">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cancelarConsulta">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelarConsultaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agendar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="agendar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="agendarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaWSImplService">
+    <wsdl:port binding="tns:ConsultaWSImplServiceSoapBinding" name="ConsultaWSImplPort">
+      <soap:address location="http://localhost:8080/CRMService-1.0-SNAPSHOT/ConsultaWSImpl"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/CRMService-1.0-SNAPSHOT/ConsultaWSImpl?wsdl=ConsultaWS.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ConsultaWS" targetNamespace="http://interfaces.clinica.com.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://interfaces.clinica.com.br/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://interfaces.clinica.com.br/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://interfaces.clinica.com.br/">
+      <xs:element name="agendar" type="tns:agendar"/>
+      <xs:element name="agendarResponse" type="tns:agendarResponse"/>
+      <xs:element name="cancelarConsulta" type="tns:cancelarConsulta"/>
+      <xs:element name="cancelarConsultaResponse" type="tns:cancelarConsultaResponse"/>
+      <xs:complexType name="cancelarConsulta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idConsulta" type="xs:long"/>
+          <xs:element minOccurs="0" name="motivoCancelamento" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelarConsultaResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="agendar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:AgendamentoConsultaDto"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AgendamentoConsultaDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="crm" type="xs:string"/>
+          <xs:element minOccurs="0" name="especialidade" type="tns:especialidade"/>
+          <xs:element minOccurs="0" name="data" type="xs:string"/>
+          <xs:element minOccurs="0" name="cpfPaciente" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="agendarResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:simpleType name="especialidade">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CARDIOLOGISTA"/>
+          <xs:enumeration value="DERMATOLOGISTA"/>
+          <xs:enumeration value="GINECOLOGISTA"/>
+          <xs:enumeration value="ORTOPEDISTA"/>
+          <xs:enumeration value="PEDIATRIA"/>
+          <xs:enumeration value="PSIQUIATRA"/>
+          <xs:enumeration value="UROLOGISTA"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="agendarResponse">
+    <wsdl:part element="ns1:agendarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelarConsulta">
+    <wsdl:part element="ns1:cancelarConsulta" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelarConsultaResponse">
+    <wsdl:part element="ns1:cancelarConsultaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="agendar">
+    <wsdl:part element="ns1:agendar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ConsultaWS">
+    <wsdl:operation name="cancelarConsulta">
+      <wsdl:input message="ns1:cancelarConsulta" name="cancelarConsulta"></wsdl:input>
+      <wsdl:output message="ns1:cancelarConsultaResponse" name="cancelarConsultaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agendar">
+      <wsdl:input message="ns1:agendar" name="agendar"></wsdl:input>
+      <wsdl:output message="ns1:agendarResponse" name="agendarResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/CRMService-1.0-SNAPSHOT/ConsultaWSImpl</con:endpoint></con:endpoints><con:operation id="adf74680-2d48-491c-896e-8c5cc74d5ae8" isOneWay="false" action="" name="agendar" bindingOperationName="agendar" type="Request-Response" outputName="agendarResponse" inputName="agendar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="74d82f3f-3ce6-4b35-b7bb-3b5be3839794" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CRMService-1.0-SNAPSHOT/ConsultaWSImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.clinica.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:agendar>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <crm>251536</crm>\r
+            <!--Optional:-->\r
+            <especialidade>?</especialidade>\r
+            <!--Optional:-->\r
+            <data>09/05/2025 15:10</data>\r
+            <!--Optional:-->\r
+            <cpfPaciente>05148963587</cpfPaciente>\r
+         </arg0>\r
+      </int:agendar>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://clinica.com.br/ConsultaWS/agendar"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="12120a02-96f2-4224-bfb4-fce939297072" isOneWay="false" action="" name="cancelarConsulta" bindingOperationName="cancelarConsulta" type="Request-Response" outputName="cancelarConsultaResponse" inputName="cancelarConsulta" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6da1364f-854e-4bdc-a524-79108346d4a4" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CRMService-1.0-SNAPSHOT/ConsultaWSImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.clinica.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:cancelarConsulta>\r
+         <!--Optional:-->\r
+         <idConsulta>1</idConsulta>\r
+         <!--Optional:-->\r
+         <motivoCancelamento>Nao da Tempo</motivoCancelamento>\r
+      </int:cancelarConsulta>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://clinica.com.br/ConsultaWS/cancelarConsulta"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

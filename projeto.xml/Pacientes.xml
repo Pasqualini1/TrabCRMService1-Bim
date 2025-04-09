@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c78e6016-2292-4825-8f85-03929866b5f0" activeEnvironment="Default" name="CRMService-Pacientes" soapui-version="5.8.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="c32faa57-1b50-462a-a5ef-0a3dfebea32a" wsaVersion="NONE" name="PacienteWSImplServiceSoapBinding" type="wsdl" bindingName="{http://clinica.com.br/}PacienteWSImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/CRMService-1.0-SNAPSHOT/PacienteWSImpl?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/CRMService-1.0-SNAPSHOT/PacienteWSImpl?wsdl"><con:part><con:url>http://localhost:8080/CRMService-1.0-SNAPSHOT/PacienteWSImpl?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PacienteWSImplService" targetNamespace="http://clinica.com.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://clinica.com.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://interfaces.clinica.com.br/">
+  <wsdl:import location="http://localhost:8080/CRMService-1.0-SNAPSHOT/PacienteWSImpl?wsdl=PacienteWS.wsdl" namespace="http://interfaces.clinica.com.br/"></wsdl:import>
+  <wsdl:binding name="PacienteWSImplServiceSoapBinding" type="ns1:PacienteWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="excluirPaciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="excluirPaciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="excluirPacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPacientes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="listarPacientes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listarPacientesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="atualizarPaciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="atualizarPaciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="atualizarPacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadastrarPaciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cadastrarPaciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cadastrarPacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPacientePorCpf">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="buscarPacientePorCpf">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="buscarPacientePorCpfResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PacienteWSImplService">
+    <wsdl:port binding="tns:PacienteWSImplServiceSoapBinding" name="PacienteWSImplPort">
+      <soap:address location="http://localhost:8080/CRMService-1.0-SNAPSHOT/PacienteWSImpl"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/CRMService-1.0-SNAPSHOT/PacienteWSImpl?wsdl=PacienteWS.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PacienteWS" targetNamespace="http://interfaces.clinica.com.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://interfaces.clinica.com.br/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://interfaces.clinica.com.br/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://interfaces.clinica.com.br/">
+      <xs:element name="atualizarPaciente" type="tns:atualizarPaciente"/>
+      <xs:element name="atualizarPacienteResponse" type="tns:atualizarPacienteResponse"/>
+      <xs:element name="buscarPacientePorCpf" type="tns:buscarPacientePorCpf"/>
+      <xs:element name="buscarPacientePorCpfResponse" type="tns:buscarPacientePorCpfResponse"/>
+      <xs:element name="cadastrarPaciente" type="tns:cadastrarPaciente"/>
+      <xs:element name="cadastrarPacienteResponse" type="tns:cadastrarPacienteResponse"/>
+      <xs:element name="excluirPaciente" type="tns:excluirPaciente"/>
+      <xs:element name="excluirPacienteResponse" type="tns:excluirPacienteResponse"/>
+      <xs:element name="listarPacientes" type="tns:listarPacientes"/>
+      <xs:element name="listarPacientesResponse" type="tns:listarPacientesResponse"/>
+      <xs:complexType name="excluirPaciente">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="excluirPacienteResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="listarPacientes">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="listarPacientesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:pacienteListagemDto"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pacienteListagemDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cpf" type="xs:string"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="atualizarPaciente">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:atualizacaoPacienteDto"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="atualizacaoPacienteDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bairro" type="xs:string"/>
+          <xs:element minOccurs="0" name="cep" type="xs:string"/>
+          <xs:element minOccurs="0" name="cidade" type="xs:string"/>
+          <xs:element minOccurs="0" name="complemento" type="xs:string"/>
+          <xs:element minOccurs="0" name="cpf" type="xs:string"/>
+          <xs:element minOccurs="0" name="estado" type="xs:string"/>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="numero" type="xs:string"/>
+          <xs:element minOccurs="0" name="rua" type="xs:string"/>
+          <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="atualizarPacienteResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="cadastrarPaciente">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:cadastroPacienteDto"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cadastroPacienteDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bairro" type="xs:string"/>
+          <xs:element minOccurs="0" name="cep" type="xs:string"/>
+          <xs:element minOccurs="0" name="cidade" type="xs:string"/>
+          <xs:element minOccurs="0" name="complemento" type="xs:string"/>
+          <xs:element minOccurs="0" name="cpf" type="xs:string"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="estado" type="xs:string"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="numero" type="xs:string"/>
+          <xs:element minOccurs="0" name="rua" type="xs:string"/>
+          <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cadastrarPacienteResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="buscarPacientePorCpf">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="buscarPacientePorCpfResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:pacienteListagemDto"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="listarPacientes">
+    <wsdl:part element="ns1:listarPacientes" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="atualizarPacienteResponse">
+    <wsdl:part element="ns1:atualizarPacienteResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cadastrarPaciente">
+    <wsdl:part element="ns1:cadastrarPaciente" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cadastrarPacienteResponse">
+    <wsdl:part element="ns1:cadastrarPacienteResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarPacientePorCpfResponse">
+    <wsdl:part element="ns1:buscarPacientePorCpfResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="excluirPaciente">
+    <wsdl:part element="ns1:excluirPaciente" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="atualizarPaciente">
+    <wsdl:part element="ns1:atualizarPaciente" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarPacientePorCpf">
+    <wsdl:part element="ns1:buscarPacientePorCpf" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="excluirPacienteResponse">
+    <wsdl:part element="ns1:excluirPacienteResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarPacientesResponse">
+    <wsdl:part element="ns1:listarPacientesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PacienteWS">
+    <wsdl:operation name="excluirPaciente">
+      <wsdl:input message="ns1:excluirPaciente" name="excluirPaciente"></wsdl:input>
+      <wsdl:output message="ns1:excluirPacienteResponse" name="excluirPacienteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPacientes">
+      <wsdl:input message="ns1:listarPacientes" name="listarPacientes"></wsdl:input>
+      <wsdl:output message="ns1:listarPacientesResponse" name="listarPacientesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="atualizarPaciente">
+      <wsdl:input message="ns1:atualizarPaciente" name="atualizarPaciente"></wsdl:input>
+      <wsdl:output message="ns1:atualizarPacienteResponse" name="atualizarPacienteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadastrarPaciente">
+      <wsdl:input message="ns1:cadastrarPaciente" name="cadastrarPaciente"></wsdl:input>
+      <wsdl:output message="ns1:cadastrarPacienteResponse" name="cadastrarPacienteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPacientePorCpf">
+      <wsdl:input message="ns1:buscarPacientePorCpf" name="buscarPacientePorCpf"></wsdl:input>
+      <wsdl:output message="ns1:buscarPacientePorCpfResponse" name="buscarPacientePorCpfResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/CRMService-1.0-SNAPSHOT/PacienteWSImpl</con:endpoint></con:endpoints><con:operation id="def1e159-c8e2-471c-8927-0212987bd07f" isOneWay="false" action="" name="atualizarPaciente" bindingOperationName="atualizarPaciente" type="Request-Response" outputName="atualizarPacienteResponse" inputName="atualizarPaciente" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b3a0d9f9-f482-418a-a2a7-723f37cd1c28" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CRMService-1.0-SNAPSHOT/PacienteWSImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.clinica.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:atualizarPaciente>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <bairro>Sitio</bairro>\r
+            <!--Optional:-->\r
+            <cep>85990123</cep>\r
+            <!--Optional:-->\r
+            <cidade>Toledo</cidade>\r
+            <!--Optional:-->\r
+            <complemento>casa</complemento>\r
+            <!--Optional:-->\r
+            <cpf>123456789</cpf>\r
+            <!--Optional:-->\r
+            <estado>PR</estado>\r
+            <id>1</id>\r
+            <!--Optional:-->\r
+            <nome>Pedro</nome>\r
+            <!--Optional:-->\r
+            <numero>197</numero>\r
+            <!--Optional:-->\r
+            <rua>Rua Melancia</rua>\r
+            <!--Optional:-->\r
+            <telefone>449985214569</telefone>\r
+         </arg0>\r
+      </int:atualizarPaciente>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://clinica.com.br/PacienteWS/atualizarPaciente"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ec20cbff-fbbf-4ea0-9107-dfd6f3cbd2c3" isOneWay="false" action="" name="buscarPacientePorCpf" bindingOperationName="buscarPacientePorCpf" type="Request-Response" outputName="buscarPacientePorCpfResponse" inputName="buscarPacientePorCpf" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e99a6243-5983-4372-b97f-9aac7b7e4984" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CRMService-1.0-SNAPSHOT/PacienteWSImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.clinica.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:buscarPacientePorCpf>\r
+         <!--Optional:-->\r
+         <arg0>05148963587</arg0>\r
+      </int:buscarPacientePorCpf>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://clinica.com.br/PacienteWS/buscarPacientePorCpf"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="25c2d5ea-d6a1-4aee-acac-f0caa54e6860" isOneWay="false" action="" name="cadastrarPaciente" bindingOperationName="cadastrarPaciente" type="Request-Response" outputName="cadastrarPacienteResponse" inputName="cadastrarPaciente" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="970c2093-0a6d-4c14-be04-d58bd2306cd1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CRMService-1.0-SNAPSHOT/PacienteWSImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.clinica.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:cadastrarPaciente>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <bairro>centro</bairro>\r
+            <!--Optional:-->\r
+            <cep>85990123</cep>\r
+            <!--Optional:-->\r
+            <cidade>terra</cidade>\r
+            <!--Optional:-->\r
+            <complemento>casa</complemento>\r
+            <!--Optional:-->\r
+            <cpf>05148963587</cpf>\r
+            <!--Optional:-->\r
+            <email>ariel@gmail.com</email>\r
+            <!--Optional:-->\r
+            <estado>PR</estado>\r
+            <!--Optional:-->\r
+            <nome>ariel</nome>\r
+            <!--Optional:-->\r
+            <numero>564</numero>\r
+            <!--Optional:-->\r
+            <rua>rua chuva</rua>\r
+            <!--Optional:-->\r
+            <telefone>44965214587</telefone>\r
+         </arg0>\r
+      </int:cadastrarPaciente>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://clinica.com.br/PacienteWS/cadastrarPaciente"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c452b28f-23b5-47e5-baa8-0f642eb47aa9" isOneWay="false" action="" name="excluirPaciente" bindingOperationName="excluirPaciente" type="Request-Response" outputName="excluirPacienteResponse" inputName="excluirPaciente" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="10279e23-e4a9-4dce-90f5-1be7b2e6c771" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CRMService-1.0-SNAPSHOT/PacienteWSImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.clinica.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:excluirPaciente>\r
+         <!--Optional:-->\r
+         <arg0>1</arg0>\r
+      </int:excluirPaciente>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://clinica.com.br/PacienteWS/excluirPaciente"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f10fe68c-6d4b-4811-8cd3-c7b93c00928c" isOneWay="false" action="" name="listarPacientes" bindingOperationName="listarPacientes" type="Request-Response" outputName="listarPacientesResponse" inputName="listarPacientes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a41749d0-591b-4fae-8c18-5d4c7d581734" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CRMService-1.0-SNAPSHOT/PacienteWSImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.clinica.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:listarPacientes/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://clinica.com.br/PacienteWS/listarPacientes"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
